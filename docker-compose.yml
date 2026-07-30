@@ -1,0 +1,8 @@
+services:
+  frontend:
+    build: .
+    container_name: library-frontend
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_URL=http://localhost:8080
