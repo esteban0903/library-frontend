@@ -9,7 +9,7 @@ export const libroService = {
   },
 
   async buscarPorId(id: number): Promise<Libro> {
-    const { data } = await apiClient.get<Libro>(`/libros/id/${id}`);
+    const { data } = await apiClient.get<Libro>(`/libros/${id}`);
     return data;
   },
 
@@ -19,12 +19,12 @@ export const libroService = {
   },
 
   async actualizar(id: number, request: LibroRequest): Promise<Libro> {
-    const { data } = await apiClient.put<Libro>(`/libros/id/${id}`, request);
+    const { data } = await apiClient.put<Libro>(`/libros/${id}`, request);
     return data;
   },
 
   async eliminar(id: number): Promise<void> {
-    await apiClient.delete(`/libros/id/${id}`);
+    await apiClient.delete(`/libros/${id}`);
   },
 
   async obtenerDisponibles(isbn: string): Promise<number> {
